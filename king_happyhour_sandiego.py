@@ -27,9 +27,6 @@ for i in range(len(url)):
 name = []
 number = []
 location = []
-bussiness_hour = []
-happy_hour = []
-deal_day = []
 sunday = []
 monday = []
 tuesday = []
@@ -41,6 +38,9 @@ saturday = []
 
 for i in range(len(ref)):
     try:
+        bussiness_hour = []
+        happy_hour = []
+        deal_day = []
         output = []
         url = f"https://kingofhappyhour.com{ref[i]}"
         page = requests.get(url)
@@ -94,10 +94,10 @@ for i in range(len(ref)):
         weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
         for i in range(len(weekdays)):
-            if bussiness_hour[i] == "Closed":
+            if business_hours[i] == "Closed":
                 output.append("Closed")
             else:
-                y = "Bussines hour: " + bussiness_hour[i] + " Happy hour: " + happy_hour[i] + " Today deal: " + deal_day[i]
+                y = "Bussines hour: " + business_hours[i] + " Happy hour: " + happy_hour[i] + " Today deal: " + deal_day[i]
                 output.append(y)
         
         sunday.append(output[0])
