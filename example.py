@@ -16,7 +16,6 @@ page = requests.get(url)
 soup = BeautifulSoup(page.content, "html.parser")
 daily_specials = soup.find_all('div', {'class': 'daily_special'})
 
-# Itera sobre cada div con clase "daily_special" y extrae el horario de negocios
 for daily_special in daily_specials:
     business_hours = daily_special.find('strong').next_sibling.strip()
     bussiness_hour.append(business_hours)

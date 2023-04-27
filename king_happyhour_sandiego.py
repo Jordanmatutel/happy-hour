@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 places = []
 ref = []
 # All the features coming from the king of happy hour San Diego
-url = ["https://kingofhappyhour.com/sandiego/features/kings_picks", "https://kingofhappyhour.com/sandiego/features/just_added", "https://kingofhappyhour.com/sandiego/features/most_viewed", "https://kingofhappyhour.com/sandiego/features/late_night"]
+url = ["https://kingofhappyhour.com/sandiego/features/kings_picks", "https://kingofhappyhour.com/sandiego/features/just_added", "https://kingofhappyhour.com/sandiego/features/most_viewed", "https://kingofhappyhour.com/sandiego/features/late_night", "https://kingofhappyhour.com/sandiego/features/taco_tuesday"]
 
 # Use the url and extract every restaurant's URL on the feature.
 for i in range(len(url)):
