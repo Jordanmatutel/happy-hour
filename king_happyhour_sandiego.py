@@ -94,10 +94,10 @@ for i in range(len(ref)):
         weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
         for i in range(len(weekdays)):
-            if business_hours[i] == "Closed":
+            if bussiness_hour[i] == "Closed":
                 output.append("Closed")
             else:
-                y = "Bussines hour: " + business_hours[i] + " Happy hour: " + happy_hour[i] + " Today deal: " + deal_day[i]
+                y = "Bussines hour: " + bussiness_hour[i] + " Happy hour: " + happy_hour[i] + " Today deal: " + deal_day[i]
                 output.append(y)
         
         sunday.append(output[0])
