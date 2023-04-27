@@ -7,20 +7,15 @@ from bs4 import BeautifulSoup
 places = []
 ref = []
 # All the features coming from the king of happy hour San Diego
-url = ["https://kingofhappyhour.com/sandiego/features/kings_picks", "https://kingofhappyhour.com/sandiego/features/just_added", "https://kingofhappyhour.com/sandiego/features/most_viewed", "https://kingofhappyhour.com/sandiego/features/late_night", "https://kingofhappyhour.com/sandiego/features/taco_tuesday"]
+with open('C:\\Users\\jorda\\Desktop\\Upwork Proyecto\\sandiego.html', 'r', encoding='iso-8859-1') as f:
+    contenido = f.read()
+soup = BeautifulSoup(contenido, 'html.parser')
+target = soup.find_all("div", class_="col-md-6 col-xs-12 bar-cell")
+# Takes the URL of every bar/restaurant
+for j in target:
+    link = j.find('a', href=True)['href']
+    ref.append(link)
 
-# Use the url and extract every restaurant's URL on the feature.
-for i in range(len(url)):
-    page = requests.get(url[i])
-    soup = BeautifulSoup(page.content, "html.parser")
-    target = soup.find_all("a", class_="bar_name")
-    # Takes the URL of every bar/restaurant
-    for j in target:
-        href_value = j['href']
-        ref.append(href_value)
-    target = soup.find_all("div",class_="happy_hour_info")    
-
-    
 # This function has give us the URL of every restaurant. Now we use
 # The URL to scrape the bar or restaurant's information.
 
